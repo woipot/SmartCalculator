@@ -1,0 +1,51 @@
+object log_form: Tlog_form
+  Left = 271
+  Height = 310
+  Top = 246
+  Width = 311
+  BorderStyle = bsSingle
+  Caption = 'Log '
+  ClientHeight = 310
+  ClientWidth = 311
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  LCLVersion = '1.6.2.0'
+  object logMemo: TMemo
+    Left = 20
+    Height = 198
+    Top = 18
+    Width = 267
+    HelpType = htKeyword
+    ReadOnly = True
+    ScrollBars = ssAutoVertical
+    TabOrder = 0
+  end
+  object clear_logmemo: TButton
+    Left = 160
+    Height = 31
+    Top = 224
+    Width = 127
+    Caption = 'delite'
+    OnClick = clear_logmemoClick
+    TabOrder = 1
+  end
+  object exitButt: TBitBtn
+    Left = 20
+    Height = 31
+    Top = 256
+    Width = 120
+    DefaultCaption = True
+    Kind = bkClose
+    ModalResult = 11
+    TabOrder = 2
+  end
+  object Show_logMemo: TButton
+    Left = 162
+    Height = 26
+    Top = 270
+    Width = 123
+    Caption = 'show'
+    OnClick = Show_logMemoClick
+    TabOrder = 3
+  end
+end

@@ -1,0 +1,47 @@
+object help_form: Thelp_form
+  Left = 948
+  Height = 397
+  Top = 425
+  Width = 422
+  BorderStyle = bsSingle
+  Caption = 'help'
+  ClientHeight = 0
+  ClientWidth = 0
+  Color = clSilver
+  Position = poDesktopCenter
+  LCLVersion = '1.6.2.0'
+  object help_text: TMemo
+    Left = 28
+    Height = 313
+    Top = 8
+    Width = 372
+    Lines.Strings = (
+      'калькулятор '
+      ''
+      'В двух боксах выбирается степень'
+      'вводимого числа и степень в которую'
+      'число необходимо перевести '
+      ''
+      'Калькулятор работает по принципу конвеиера'
+      'поэтому нет необходимости после каждого '
+      'ввода операции и двух чисел нажимать'
+      'на кнопку равенства '
+      ''
+      'кнопка log(on) включает запись логов в фаил'
+      'а кнопка LOG открывает логи.'
+    )
+    ReadOnly = True
+    ScrollBars = ssAutoVertical
+    TabOrder = 0
+  end
+  object exitBut: TBitBtn
+    Left = 72
+    Height = 43
+    Top = 336
+    Width = 274
+    DefaultCaption = True
+    Kind = bkClose
+    ModalResult = 11
+    TabOrder = 1
+  end
+end

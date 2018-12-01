@@ -1,0 +1,509 @@
+object calculator: Tcalculator
+  Left = 1134
+  Height = 617
+  Top = 94
+  Width = 319
+  BorderStyle = bsSingle
+  Caption = 'calculator v.1'
+  ClientHeight = 592
+  ClientWidth = 319
+  Color = 16744576
+  Menu = headmenu
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  LCLVersion = '1.6.2.0'
+  object exampleEdit: TEdit
+    Left = 0
+    Height = 30
+    Top = 0
+    Width = 320
+    Alignment = taRightJustify
+    AutoSize = False
+    AutoSelect = False
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -17
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnKeyPress = numberEditKeyPress
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 0
+    TextHintFontColor = clBlack
+  end
+  object numberEdit: TEdit
+    Left = 0
+    Height = 40
+    Top = 32
+    Width = 320
+    Alignment = taRightJustify
+    AutoSize = False
+    AutoSelect = False
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -27
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    MaxLength = 23
+    NumbersOnly = True
+    OnKeyPress = numberEditKeyPress
+    ParentFont = False
+    ParentShowHint = False
+    ReadOnly = True
+    TabOrder = 1
+    Text = '0'
+    TextHintFontColor = clBlack
+  end
+  object number7: TButton
+    Left = -1
+    Height = 80
+    Top = 280
+    Width = 80
+    Caption = '7'
+    OnClick = number1Click
+    TabOrder = 2
+  end
+  object number8: TButton
+    Left = 79
+    Height = 80
+    Top = 280
+    Width = 80
+    Caption = '8'
+    OnClick = number1Click
+    TabOrder = 3
+  end
+  object number9: TButton
+    Left = 159
+    Height = 80
+    Top = 280
+    Width = 80
+    Caption = '9'
+    OnClick = number1Click
+    TabOrder = 4
+  end
+  object number4: TButton
+    Left = -1
+    Height = 80
+    Top = 360
+    Width = 80
+    Caption = '4'
+    OnClick = number1Click
+    TabOrder = 5
+  end
+  object number5: TButton
+    Left = 79
+    Height = 80
+    Top = 360
+    Width = 80
+    Caption = '5'
+    OnClick = number1Click
+    TabOrder = 6
+  end
+  object number6: TButton
+    Left = 159
+    Height = 80
+    Top = 360
+    Width = 80
+    Caption = '6'
+    OnClick = number1Click
+    TabOrder = 7
+  end
+  object number1: TButton
+    Left = -1
+    Height = 80
+    Top = 440
+    Width = 80
+    Caption = '1'
+    OnClick = number1Click
+    TabOrder = 8
+  end
+  object number2: TButton
+    Left = 79
+    Height = 80
+    Top = 440
+    Width = 80
+    Caption = '2'
+    OnClick = number1Click
+    TabOrder = 9
+  end
+  object number3: TButton
+    Left = 159
+    Height = 80
+    Top = 440
+    Width = 80
+    Caption = '3'
+    OnClick = number1Click
+    TabOrder = 10
+  end
+  object negativeButton: TButton
+    Left = -1
+    Height = 80
+    Top = 520
+    Width = 80
+    Caption = '±'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -33
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = negativeButtonClick
+    ParentFont = False
+    TabOrder = 11
+  end
+  object zeroButton: TButton
+    Left = 79
+    Height = 80
+    Top = 520
+    Width = 80
+    Caption = '0'
+    OnClick = zeroButtonClick
+    TabOrder = 12
+  end
+  object pointerButton: TButton
+    Left = 159
+    Height = 80
+    Top = 520
+    Width = 80
+    BidiMode = bdRightToLeft
+    Caption = '.'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -33
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentBidiMode = False
+    OnClick = pointerButtonClick
+    ParentFont = False
+    TabOrder = 13
+  end
+  object ButtonPLus: TButton
+    Left = 239
+    Height = 80
+    Top = 360
+    Width = 80
+    Caption = '+'
+    Color = clWhite
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -33
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = devisionButtonClick
+    ParentFont = False
+    TabOrder = 14
+  end
+  object ButtonMinus: TButton
+    Left = 239
+    Height = 80
+    Top = 440
+    Width = 80
+    Caption = '-'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -33
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = devisionButtonClick
+    ParentFont = False
+    TabOrder = 15
+  end
+  object ButtonUmno: TButton
+    Left = 239
+    Height = 80
+    Top = 280
+    Width = 80
+    Caption = '*'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -33
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = devisionButtonClick
+    ParentFont = False
+    TabOrder = 16
+  end
+  object enterBUtton: TButton
+    Left = 239
+    Height = 80
+    Top = 520
+    Width = 80
+    Caption = '='
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -33
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = enterBUttonClick
+    ParentFont = False
+    TabOrder = 17
+  end
+  object CEButton: TButton
+    Left = -1
+    Height = 80
+    Top = 120
+    Width = 80
+    Caption = 'CE'
+    Color = 4227072
+    OnClick = CEButtonClick
+    TabOrder = 18
+  end
+  object CButton: TButton
+    Left = 79
+    Height = 80
+    Top = 120
+    Width = 80
+    Caption = 'C'
+    OnClick = CButtonClick
+    TabOrder = 19
+  end
+  object deliteCh: TButton
+    Left = 159
+    Height = 80
+    Top = 120
+    Width = 80
+    Caption = '◄'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -17
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = deliteChClick
+    ParentFont = False
+    TabOrder = 20
+  end
+  object devisionButton: TButton
+    Left = 239
+    Height = 80
+    Top = 200
+    Width = 80
+    Caption = '÷'
+    Color = clNone
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -33
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = devisionButtonClick
+    ParentFont = False
+    TabOrder = 21
+  end
+  object ErrorEdit: TEdit
+    Left = 239
+    Height = 26
+    Top = 96
+    Width = 80
+    Alignment = taCenter
+    AutoSize = False
+    AutoSelect = False
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -10
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentBidiMode = False
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 22
+  end
+  object systembox2: TComboBox
+    Left = 159
+    Height = 26
+    Top = 96
+    Width = 80
+    AutoSize = False
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -15
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ItemHeight = 20
+    ItemIndex = 3
+    Items.Strings = (
+      '2'
+      '4'
+      '8'
+      '10'
+      '16'
+    )
+    ParentBidiMode = False
+    ParentFont = False
+    ReadOnly = True
+    Style = csOwnerDrawVariable
+    TabOrder = 23
+    Text = '10'
+  end
+  object inData: TLabel
+    Left = 135
+    Height = 24
+    Top = 96
+    Width = 13
+    Caption = 'В'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -17
+    Font.Name = 'Arial Black'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object outData: TLabel
+    Left = 8
+    Height = 24
+    Top = 96
+    Width = 26
+    Caption = 'ИЗ'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -17
+    Font.Name = 'Arial Black'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object systembox1: TComboBox
+    Left = 39
+    Height = 26
+    Top = 96
+    Width = 80
+    AutoSize = False
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -15
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ItemHeight = 20
+    ItemIndex = 4
+    Items.Strings = (
+      '2'
+      '4'
+      '8'
+      '10'
+      '16'
+    )
+    OnChange = systembox1Change
+    ParentBidiMode = False
+    ParentFont = False
+    ReadOnly = True
+    Style = csOwnerDrawFixed
+    TabOrder = 24
+    Text = '16'
+  end
+  object namberA: TButton
+    Left = -1
+    Height = 40
+    Top = 240
+    Width = 80
+    Caption = 'A'
+    OnClick = number1Click
+    TabOrder = 25
+  end
+  object NumberB: TButton
+    Left = 79
+    Height = 40
+    Top = 240
+    Width = 80
+    Caption = 'B'
+    OnClick = number1Click
+    TabOrder = 26
+  end
+  object NumberC: TButton
+    Left = 159
+    Height = 40
+    Top = 240
+    Width = 80
+    Caption = 'C'
+    OnClick = number1Click
+    TabOrder = 27
+  end
+  object numberD: TButton
+    Left = -1
+    Height = 40
+    Top = 200
+    Width = 80
+    Caption = 'D'
+    OnClick = number1Click
+    TabOrder = 28
+  end
+  object numberE: TButton
+    Left = 79
+    Height = 40
+    Top = 200
+    Width = 80
+    Caption = 'E'
+    OnClick = number1Click
+    TabOrder = 29
+  end
+  object numberF: TButton
+    Left = 159
+    Height = 40
+    Top = 200
+    Width = 80
+    Caption = 'F'
+    OnClick = number1Click
+    TabOrder = 30
+  end
+  object logbutton: TButton
+    Left = 239
+    Height = 40
+    Top = 160
+    Width = 80
+    Caption = 'LOG'
+    OnClick = logbuttonClick
+    TabOrder = 31
+  end
+  object logActivate: TToggleBox
+    Left = 239
+    Height = 40
+    Top = 120
+    Width = 80
+    Caption = 'log(on)'
+    TabOrder = 32
+  end
+  object TestEdit: TEdit
+    Left = 0
+    Height = 26
+    Top = 72
+    Width = 320
+    Alignment = taCenter
+    AutoSize = False
+    AutoSelect = False
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -20
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentBidiMode = False
+    OnKeyPress = numberEditKeyPress
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 33
+  end
+  object headmenu: TMainMenu
+    left = 40
+    top = 8
+    object File_menu: TMenuItem
+      Caption = 'file'
+      object CloseProgramm: TMenuItem
+        Caption = 'Exit'
+        OnClick = CloseProgrammClick
+      end
+    end
+    object help_menu: TMenuItem
+      Caption = 'help'
+      object help: TMenuItem
+        Caption = 'help'
+        OnClick = helpClick
+      end
+      object about: TMenuItem
+        Caption = 'about'
+        OnClick = aboutClick
+      end
+      object source: TMenuItem
+        Caption = 'source'
+        OnClick = sourceClick
+      end
+    end
+  end
+end
